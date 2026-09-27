@@ -1,6 +1,6 @@
-//Previo 06
-//Calderon Monroy Emily 
-//22 de Septiembre 2026
+//Practica 06 - Carga de Modelos
+// Emily Calderon
+// 25 de Septiembre 2026
 //318041267
 
 // Std. Includes
@@ -59,7 +59,7 @@ int main( )
     glfwWindowHint( GLFW_RESIZABLE, GL_FALSE );
     
     // Create a GLFWwindow object that we can use for GLFW's functions
-    GLFWwindow *window = glfwCreateWindow( WIDTH, HEIGHT, "Previo 06 - Emily Calderon Monroy", nullptr, nullptr );
+    GLFWwindow *window = glfwCreateWindow( WIDTH, HEIGHT, "Practica 06 - Emily Calderon", nullptr, nullptr );
     
     if ( nullptr == window )
     {
@@ -99,11 +99,22 @@ int main( )
     Shader shader( "Shader/modelLoading.vs", "Shader/modelLoading.frag" );
     
     // Load models
-    Model dog((char*)"Models/RedDog.obj");
+    Model arbol((char*)"Models/arbol.obj");
+	Model dog((char*)"Models/RedDog.obj");
+    Model gorrito((char*)"Models/gorro_fiesta.obj");
+    Model globos((char*)"Models/ramo_globos.obj");
+    Model guirnalda((char*)"Models/guirnalda_banderines.obj");
+    Model moño((char*)"Models/mono_perrito.obj");
+    Model pastel((char*)"Models/pastel_cumpleanos.obj");
+    Model pasto((char*)"Models/pasto.obj");
+    Model regalo((char*)"Models/regalo_1.obj");
+    Model regalo2((char*)"Models/regalo_2.obj");
+    Model regalo3((char*)"Models/regalo_3.obj");
+    Model regalo4((char*)"Models/regalo_4.obj");
+
     glm::mat4 projection = glm::perspective( camera.GetZoom( ), ( float )SCREEN_WIDTH/( float )SCREEN_HEIGHT, 0.1f, 100.0f );
     
   
-
     // Game loop
     while (!glfwWindowShouldClose(window))
     {
@@ -117,7 +128,7 @@ int main( )
         DoMovement();
 
         // Clear the colorbuffer
-        glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
+        glClearColor(0.65f, 0.85f, 1.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         shader.Use();
@@ -128,14 +139,185 @@ int main( )
 
         // Draw the loaded model
         glm::mat4 model(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(2.5f, 2.5f, 2.5f));
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        dog.Draw(shader);
+		dog.Draw(shader);
 
-		model = glm::translate(model, glm::vec3(3.0f, 0.0f, 0.0f));
-        model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
+        //Gorrito cumpleañero
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(0.0f, 0.4f, 0.8f));
+        model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        dog.Draw(shader);
-    
+        gorrito.Draw(shader);
+
+        //Moño cumpleañero
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.9f));
+        model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        moño.Draw(shader);
+      
+        //Pastel
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(0.0f, -1.0f, 1.0f));
+        model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        pastel.Draw(shader);
+
+        //Arbol
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(-3.0f, -1.2f, 1.0f));
+        model = glm::scale(model, glm::vec3(0.7f, 0.9f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        arbol.Draw(shader);
+      
+        //Arbol2
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(3.0f, -1.2f, 1.0f));
+        model = glm::scale(model, glm::vec3(0.7f, 0.9f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        arbol.Draw(shader);
+
+        //Arbol3
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(4.5f, -1.2f, 0.0f));
+        model = glm::scale(model, glm::vec3(0.7f, 0.9f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        arbol.Draw(shader);
+
+        //Arbol4
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(-4.5f, -1.2f, 0.0f));
+        model = glm::scale(model, glm::vec3(0.7f, 0.9f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        arbol.Draw(shader);
+       
+        //Arbol5
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(4.0f, -1.2f, -0.9f));
+        model = glm::scale(model, glm::vec3(0.7f, 0.9f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        arbol.Draw(shader);
+
+        //Arbol6
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(-4.0f, -1.2f, -0.9f));
+        model = glm::scale(model, glm::vec3(0.7f, 0.9f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        arbol.Draw(shader);
+      
+        //Arbol7
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(-1.1f, -1.2f, -3.0f));
+        model = glm::scale(model, glm::vec3(0.7f, 0.9f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        arbol.Draw(shader);
+
+        //Arbol8
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(1.1f, -1.2f, -3.0f));
+        model = glm::scale(model, glm::vec3(0.7f, 0.9f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        arbol.Draw(shader);
+
+        //Globos1
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(2.0f, -1.0f, -1.0f));
+        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        globos.Draw(shader);
+
+        //Globos2
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(-2.0f, -1.0f, -1.0f));
+        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        globos.Draw(shader);
+
+        //Guirnalda1
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(-2.0f, 1.0f, -2.0f));
+        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        guirnalda.Draw(shader);
+
+        //Guirnalda2
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(2.0f, 1.0f, -2.0f));
+        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        guirnalda.Draw(shader);
+
+        //Pasto
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(0.0f, -1.2f, -1.0f));
+        model = glm::scale(model, glm::vec3(2.5f, 1.0f, 2.5f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        pasto.Draw(shader);
+
+        //Regalo1  Morado Izquierda
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(-2.0f, -0.65f, -1.0f));
+        model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        regalo.Draw(shader);
+
+        //Regalo2 Rosa Izquierda
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(-1.5f, -1.0f, -1.0f));
+        model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+        model = glm::rotate(model, glm::radians(45.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        regalo2.Draw(shader);
+
+        //Regalo2  Derecha
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(1.5f, -0.9f, 1.0f));
+        model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+        model = glm::rotate(model, glm::radians(45.0f), glm::vec3(0.0f, 0.5f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        regalo2.Draw(shader);
+
+        //Regalo2  Derecha2
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(1.5f, -0.6f, -0.5f));
+        model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        regalo2.Draw(shader);
+
+        //Regalo3 Azul Izquierda
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(-1.2f, -1.2f, 0.7f));
+        model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+        model = glm::rotate(model, glm::radians(45.0f), glm::vec3(0.0f, 1.5f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        regalo3.Draw(shader);
+
+        //Regalo3 Derecha
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(1.5f, -1.0f, -0.5f));
+        model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        regalo3.Draw(shader);
+
+        //Regalo4 Amarillo Izquierda
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(-1.8f, -1.0f, -0.4f));
+        model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+        model = glm::rotate(model, glm::radians(45.0f), glm::vec3(0.0f, -1.0f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        regalo4.Draw(shader);
+        
+        //Regalo4 Derecha
+        model = glm::mat4(1);
+        model = glm::translate(model, glm::vec3(2.2f, -0.8f, -0.9f));
+        model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        regalo4.Draw(shader);
+
+
+
 
 
         // Swap the buffers

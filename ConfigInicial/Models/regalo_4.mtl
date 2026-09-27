@@ -1,0 +1,119 @@
+newmtl rosa_pastel
+Kd 1.0 1.0 1.0
+Ka 0.2 0.2 0.2
+Ks 0.08 0.08 0.08
+Ns 12
+d 1.0
+map_Kd regalo_4_textura.jpg
+
+newmtl rosa_claro
+Kd 1.0 1.0 1.0
+Ka 0.2 0.2 0.2
+Ks 0.08 0.08 0.08
+Ns 12
+d 1.0
+map_Kd regalo_4_textura.jpg
+
+newmtl rosa_fuerte
+Kd 1.0 1.0 1.0
+Ka 0.2 0.2 0.2
+Ks 0.08 0.08 0.08
+Ns 12
+d 1.0
+map_Kd regalo_4_textura.jpg
+
+newmtl crema
+Kd 1.0 1.0 1.0
+Ka 0.2 0.2 0.2
+Ks 0.08 0.08 0.08
+Ns 12
+d 1.0
+map_Kd regalo_4_textura.jpg
+
+newmtl blanco
+Kd 1.0 1.0 1.0
+Ka 0.2 0.2 0.2
+Ks 0.08 0.08 0.08
+Ns 12
+d 1.0
+map_Kd regalo_4_textura.jpg
+
+newmtl amarillo
+Kd 1.0 1.0 1.0
+Ka 0.2 0.2 0.2
+Ks 0.08 0.08 0.08
+Ns 12
+d 1.0
+map_Kd regalo_4_textura.jpg
+
+newmtl azul
+Kd 1.0 1.0 1.0
+Ka 0.2 0.2 0.2
+Ks 0.08 0.08 0.08
+Ns 12
+d 1.0
+map_Kd regalo_4_textura.jpg
+
+newmtl menta
+Kd 1.0 1.0 1.0
+Ka 0.2 0.2 0.2
+Ks 0.08 0.08 0.08
+Ns 12
+d 1.0
+map_Kd regalo_4_textura.jpg
+
+newmtl lila
+Kd 1.0 1.0 1.0
+Ka 0.2 0.2 0.2
+Ks 0.08 0.08 0.08
+Ns 12
+d 1.0
+map_Kd regalo_4_textura.jpg
+
+newmtl naranja
+Kd 1.0 1.0 1.0
+Ka 0.2 0.2 0.2
+Ks 0.08 0.08 0.08
+Ns 12
+d 1.0
+map_Kd regalo_4_textura.jpg
+
+newmtl rojo_fresa
+Kd 1.0 1.0 1.0
+Ka 0.2 0.2 0.2
+Ks 0.08 0.08 0.08
+Ns 12
+d 1.0
+map_Kd regalo_4_textura.jpg
+
+newmtl verde
+Kd 1.0 1.0 1.0
+Ka 0.2 0.2 0.2
+Ks 0.08 0.08 0.08
+Ns 12
+d 1.0
+map_Kd regalo_4_textura.jpg
+
+newmtl cafe
+Kd 1.0 1.0 1.0
+Ka 0.2 0.2 0.2
+Ks 0.08 0.08 0.08
+Ns 12
+d 1.0
+map_Kd regalo_4_textura.jpg
+
+newmtl flama
+Kd 1.0 1.0 1.0
+Ka 0.2 0.2 0.2
+Ks 0.08 0.08 0.08
+Ns 12
+d 1.0
+map_Kd regalo_4_textura.jpg
+
+newmtl gris
+Kd 1.0 1.0 1.0
+Ka 0.2 0.2 0.2
+Ks 0.08 0.08 0.08
+Ns 12
+d 1.0
+map_Kd regalo_4_textura.jpg
