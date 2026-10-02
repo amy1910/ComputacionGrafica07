@@ -1,6 +1,6 @@
-//Previo 07- texturizado
+//Practica 07- texturizado
 //Calderon Monroy Emily
-//29 de Septiembre 2026
+//30 de Septiembre 2026
 //318041267
 
 #include <iostream>
@@ -35,7 +35,7 @@ const GLuint WIDTH = 800, HEIGHT = 600;
 int SCREEN_WIDTH, SCREEN_HEIGHT;
 
 // Camera
-Camera  camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera  camera(glm::vec3(0.0f, 0.0f, 4.0f));
 GLfloat lastX = WIDTH / 2.0;
 GLfloat lastY = HEIGHT / 2.0;
 bool keys[1024];
@@ -61,7 +61,7 @@ int main()
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
 	// Create a GLFWwindow object that we can use for GLFW's functions
-	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Previo 07- Emily Calderon ", nullptr, nullptr);
+	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Practica 07- Emily Calderon ", nullptr, nullptr);
 
 	if (nullptr == window)
 	{
@@ -103,21 +103,70 @@ int main()
 
 	// Set up vertex data (and buffer(s)) and attribute pointers
 	GLfloat vertices[] =
-	{
-		// Positions            // Colors              // Texture Coords
-		-0.5f, -0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.0f,0.0f,
-		0.5f, -0.5f, 0.0f,	   1.0f, 1.0f,1.0f,		1.0f,0.0f,
-		0.5f,  0.5f, 0.0f,     1.0f, 1.0f,1.0f,	    1.0f,1.0f,
-		-0.5f,  0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.0f,1.0f,
+	{  
+	// -------- CARA FRONTAL (centro con texto) --------
+   -0.5f,-0.5f, 0.5f,      1.0f,1.0f,1.0f,              0.4,0.3f,//inferior izquierda
+	0.5f,-0.5f, 0.5f,      1.0f,1.0f,1.0f,              0.6f,0.3f,//inferior derecha
+	0.5f, 0.5f, 0.5f,      1.0f,1.0f,1.0f,              0.6f,0.51f,//superior derecha
+   -0.5f, 0.5f, 0.5f,      1.0f,1.0f,1.0f,              0.4f,0.51f,//superior izquierda
 
+   // -------- CARA TRASERA (rectángulo superior) --------
+	0.5f,-0.5f,-0.5f,      1.0f,1.0f,1.0f,              0.4f,0.74f,
+   -0.5f,-0.5f,-0.5f,      1.0f,1.0f,1.0f,              0.6f,0.74f,
+   -0.5f, 0.5f,-0.5f,      1.0f,1.0f,1.0f,              0.6f,0.95f,
+	0.5f, 0.5f,-0.5f,      1.0f,1.0f,1.0f,              0.4f,0.95f,
+
+	// -------- CARA IZQUIERDA --------
+	-0.5f,-0.5f,-0.5f,      1.0f,1.0f,1.0f,             0.18f,0.3f,
+	-0.5f,-0.5f, 0.5f,      1.0f,1.0f,1.0f,             0.39f,0.3f,
+	-0.5f, 0.5f, 0.5f,      1.0f,1.0f,1.0f,             0.38f,0.51f,
+	-0.5f, 0.5f,-0.5f,      1.0f,1.0f,1.0f,             0.18f,0.51f,
+
+	// -------- CARA DERECHA --------
+	 0.5f,-0.5f, 0.5f,      1.0f,1.0f,1.0f,             0.61f,0.3f,//inferior izquierda
+	 0.5f,-0.5f,-0.5f,      1.0f,1.0f,1.0f,             0.81f,0.3f,//inferior derecha
+	 0.5f, 0.5f,-0.5f,      1.0f,1.0f,1.0f,             0.81f,0.51f,//superior derecha
+	 0.5f, 0.5f, 0.5f,      1.0f,1.0f,1.0f,             0.61f,0.51f,//superior izquierda
+
+	 // -------- CARA SUPERIOR --------
+	 -0.5f, 0.5f, 0.5f,      1.0f,1.0f,1.0f,            0.4f,0.52f,
+	  0.5f, 0.5f, 0.5f,      1.0f,1.0f,1.0f,            0.6f,0.52,
+	  0.5f, 0.5f,-0.5f,      1.0f,1.0f,1.0f,            0.6f,0.73f,
+	 -0.5f, 0.5f,-0.5f,      1.0f,1.0f,1.0f,            0.4f,0.73f,
+
+	 // -------- CARA INFERIOR --------
+	 -0.5f,-0.5f,-0.5f,      1.0f,1.0f,1.0f,            0.4f,0.08f,
+	  0.5f,-0.5f,-0.5f,      1.0f,1.0f,1.0f,            0.6f,0.08f,
+	  0.5f,-0.5f, 0.5f,      1.0f,1.0f,1.0f,            0.6f,0.29f,
+	 -0.5f,-0.5f, 0.5f,      1.0f,1.0f,1.0f,            0.4f,0.29f,
 		
 	};
 
 	GLuint indices[] =
-	{  // Note that we start from 0!
-		0,1,3,
-		1,2,3
-	
+	{
+		// Frente
+		0, 1, 2,
+		2, 3, 0,
+
+		// Atrás
+		4, 5, 6,
+		6, 7, 4,
+
+		// Izquierda
+		8, 9, 10,
+		10, 11, 8,
+
+		// Derecha
+		12, 13, 14,
+		14, 15, 12,
+
+		// Superior
+		16, 17, 18,
+		18, 19, 16,
+
+		// Inferior
+		20, 21, 22,
+		22, 23, 20
 	};
 
 	// First, set the container's VAO (and VBO)
@@ -156,13 +205,13 @@ int main()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST_MIPMAP_NEAREST);
 	// Diffuse map
-	image = stbi_load("images/window.png", &textureWidth, &textureHeight, &nrChannels,0);
+	image = stbi_load("images/dado2.jpeg", &textureWidth, &textureHeight, &nrChannels,0);
 	glBindTexture(GL_TEXTURE_2D, texture1);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, textureWidth, textureHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, textureWidth, textureHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
 	glGenerateMipmap(GL_TEXTURE_2D);
 	if (image)
 	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, textureWidth, textureHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, textureWidth, textureHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
 		glGenerateMipmap(GL_TEXTURE_2D);
 	}
 	else
@@ -211,7 +260,7 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		// Draw the light object (using light's vertex attributes)
 		glBindVertexArray(VAO);
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
 		glBindVertexArray(0);
 
 		// Swap the screen buffers
