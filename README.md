@@ -9,8 +9,8 @@
 **Laboratorio:** Computación Gráfica e Interacción Humano-Computadora  
 **Grupo (teoría):** 01
 **Grupo (laboratorio):** 07  
-**Profesor (teoría):** [ING. ARTURO PEREZ DE LA CRUZ]  
-**Profesor (laboratorio):** [ING. ARTURO PEREZ DE LA CRUZ]  
+**Profesor (teoría):** ING. ARTURO PEREZ DE LA CRUZ  
+**Profesor (laboratorio):** ING. ARTURO PEREZ DE LA CRUZ 
 **Semestre:** 2027-1
 
 ---
