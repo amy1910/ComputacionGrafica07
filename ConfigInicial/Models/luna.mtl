@@ -1,0 +1,9 @@
+# Material Luna_Creciente
+newmtl Luna_Creciente
+Ka 0.35 0.35 0.35
+Kd 1.000 1.000 1.000
+Ks 0.25 0.23 0.15
+Ns 25
+d 1.0
+illum 2
+map_Kd luna_textura.png
