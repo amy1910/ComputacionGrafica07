@@ -1,0 +1,37 @@
+# Materiales del farol
+newmtl metal
+Ka 0.15 0.12 0.09
+Kd 1.0 1.0 1.0
+Ks 0.55 0.45 0.28
+Ns 45
+illum 2
+map_Kd metal_diffuse.png
+map_Ks metal_specular.png
+map_Bump -bm 1.0 metal_normal.png
+norm metal_normal.png
+
+newmtl glass
+Ka 0.4 0.3 0.25
+Kd 1.0 1.0 1.0
+Ks 0.35 0.35 0.35
+Ke 1.0 1.0 1.0
+Ns 80
+d 0.92
+illum 2
+map_Kd glass_diffuse.png
+map_Ke glass_emissive.png
+
+newmtl hole
+Ka 0.0 0.0 0.0
+Kd 0.02 0.015 0.01
+Ks 0.0 0.0 0.0
+Ns 1
+illum 1
+
+newmtl flame
+Ka 1.0 0.8 0.4
+Kd 1.0 0.85 0.45
+Ks 0.0 0.0 0.0
+Ke 1.0 0.75 0.25
+d 0.85
+illum 1

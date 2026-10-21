@@ -1,0 +1,37 @@
+newmtl metal_negro
+Ka 1.0 1.0 1.0
+Kd 1.0 1.0 1.0
+Ks 0.6 0.6 0.6
+Ns 90
+d 1.0
+illum 2
+map_Kd farola_metal.png
+map_Ks farola_spec.png
+
+newmtl cobre
+Ka 1.0 1.0 1.0
+Kd 1.0 1.0 1.0
+Ks 0.8 0.8 0.8
+Ns 120
+d 1.0
+illum 2
+map_Kd farola_cobre.png
+map_Ks farola_spec.png
+
+newmtl vidrio
+Ka 1.0 1.0 1.0
+Kd 1.0 1.0 1.0
+Ks 0.0 0.0 0.0
+Ns 10
+d 1.0
+illum 1
+map_Kd farola_vidrio.png
+
+newmtl bombilla
+Ka 1.0 1.0 1.0
+Kd 1.0 1.0 1.0
+Ks 0.0 0.0 0.0
+Ns 10
+d 1.0
+illum 1
+map_Kd farola_foco.png
